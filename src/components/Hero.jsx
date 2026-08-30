@@ -20,17 +20,18 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="mx-auto"
           >
-            <div className="relative h-64 w-64 sm:h-80 sm:w-80">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400 via-indigo-500 to-fuchsia-500 p-[5px] shadow-[0_0_70px_rgba(99,102,241,.45)]">
-                <div className="h-full w-full overflow-hidden rounded-full bg-slate-950 p-1">
+            <div className="relative mx-auto w-full max-w-[360px] sm:max-w-[400px] lg:max-w-[430px]">
+              <div className="rounded-3xl bg-gradient-to-br from-cyan-400 via-indigo-500 to-amber-400 p-[3px] shadow-[0_0_70px_rgba(99,102,241,.30)]">
+                <div className="overflow-hidden rounded-[21px] bg-slate-950">
                   <img
                     src="/profile.jpg"
-                    alt="Biju Behera"
-                    className="h-full w-full rounded-full object-cover"
+                    alt="Biju Behera - AWS DevOps Engineer"
+                    className="block h-auto w-full object-contain"
                   />
                 </div>
               </div>
-              <div className="absolute -bottom-3 -right-4 glass rounded-2xl px-4 py-3 text-xs text-slate-200 shadow-xl">
+
+              <div className="absolute -bottom-4 -right-3 glass rounded-2xl px-4 py-3 text-xs text-slate-200 shadow-xl">
                 <span className="text-indigo-300">AWS</span> • DevOps • Linux
               </div>
             </div>
