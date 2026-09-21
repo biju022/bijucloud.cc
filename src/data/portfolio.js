@@ -1,89 +1,109 @@
-export const contact = {
-  phone: "+91 7751009113",
+export const profile = {
+  name: "Biju Behera",
+  title: "AWS DevOps Engineer",
+  currentRole: "Senior Consultant",
+  location: "Bangalore, India",
   email: "bijubehera022@gmail.com",
-  location: "Bangalore",
-  linkedin: "https://www.linkedin.com/in/biju-behera-196509a4",
-  whatsapp: "917751009113",
+  phone: "+91 7751009113",
+  website: "https://bijucloud.cc",
+  tagline: "Building reliable, scalable AWS infrastructure and automation that moves systems from code to production.",
+  summary:
+    "AWS and DevOps Engineer with 8+ years of IT experience specialising in AWS cloud infrastructure, Infrastructure as Code, CI/CD automation, configuration management, Linux administration, and cloud operations. Hands-on across scalable AWS infrastructure, automation, deployments, and production operations, with experience using AI-assisted engineering tools for troubleshooting, coding, research, documentation, and solution analysis.",
 };
 
 export const navItems = [
-  ["Home", "home"],
-  ["About", "about"],
-  ["Tech Stack", "tech-stack"],
-  ["Projects", "projects"],
-  ["Experience", "experience"],
-  ["Contact", "contact"],
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "stack", label: "Stack" },
+  { id: "experience", label: "Experience" },
+  { id: "contact", label: "Contact" },
 ];
 
 export const techStack = [
-  "AWS",
-  "Jenkins",
-  "WAF – Cloudflare, Sucuri",
-  "Linux",
-  "Terraform",
-  "Code commit, Git",
-  "Docker",
-  "shell scripting",
-  "ubuntu, centos",
-  "Apache, Nginx",
-  "Cloudwatch, Nagios",
+  { name: "AWS", icon: "AWS" },
+  { name: "Linux", icon: "⌁" },
+  { name: "Ubuntu", icon: "U" },
+  { name: "CentOS", icon: "C" },
+  { name: "Terraform", icon: "TF" },
+  { name: "AWS CloudFormation", icon: "CF" },
+  { name: "Shell Scripting", icon: "SH" },
+  { name: "CloudWatch", icon: "CW" },
+  { name: "Prometheus", icon: "P" },
+  { name: "Grafana", icon: "G" },
+  { name: "Jenkins", icon: "J" },
+  { name: "Ansible", icon: "A" },
+  { name: "Apache", icon: "A" },
+  { name: "Nginx", icon: "N" },
+  { name: "Git", icon: "Git" },
+  { name: "AWS CodeCommit", icon: "CC" },
+  { name: "Cloudflare", icon: "CF" },
+  { name: "Sucuri WAF", icon: "WAF" },
+  { name: "ChatGPT", icon: "AI" },
+  { name: "Claude", icon: "AI" },
+  { name: "GitHub Copilot", icon: "AI" },
+  { name: "Docker", icon: "D" },
 ];
+
 
 export const experience = [
   {
     company: "Infosys",
-    role: "Full Stack Developer",
-    duration: "Feb 2025 - Present",
-    current: true,
-    details: "Details available on request",
-  },
-  {
-    company: "Fcoos Technologies Private Limited",
+    role: "Senior Consultant",
+    duration: "09/2023 – Present",
     location: "Bangalore",
+    source: "resume",
+    details: [
+      "Design, implement, and maintain AWS cloud infrastructure across SBOX, LAB, Pre-Production, and Production environments using Terraform and Infrastructure as Code practices.",
+      "Supported application migration from on-premises to AWS, including infrastructure provisioning, deployment, and troubleshooting.",
+      "Develop and maintain Terraform modules for EC2, Auto Scaling Groups (ASG), Network Load Balancers (NLB), and Amazon EKS to automate infrastructure provisioning.",
+      "Provision and manage AWS resources including EC2, VPC, Load Balancers, IAM, Auto Scaling, CloudWatch, RDS, S3, EBS, and AWS Budgets.",
+      "Develop and maintain Jenkins CI/CD pipelines to automate infrastructure and application deployment workflows across multiple environments.",
+      "Integrate Terraform infrastructure provisioning with Jenkins CI/CD pipelines to support consistent and controlled infrastructure deployments.",
+      "Troubleshoot AWS, Terraform, Jenkins, Ansible, and deployment-related issues across multiple environments, performing root-cause analysis and implementing corrective solutions.",
+      "Collaborate with application, development, infrastructure, and operations teams to support cloud deployments, environment changes, incident resolution, and production operations.",
+      "Use ChatGPT, Claude, and GitHub Copilot for troubleshooting, Terraform code development, scripting, technical research, documentation, and solution analysis, while validating generated solutions before implementation.",
+    ],
+  },
+  {
+    company: "FCOOS TECHNOLOGIES PRIVATE LIMITED",
     role: "Cloud Engineer",
-    duration: "07/2021 - Present",
+    duration: "07/2021 – 09/2023",
+    location: "Bangalore",
     details: [
-      "Successfully architected, deployed, and managed cloud solutions on AWS, including EC2, ECS, ELB, EBS, S3, VPC, IAM, Linux, RDS, CloudWatch, CloudFormation, ElasticBeanstalk, and Autoscaling.",
-      "Proficient in setting up and managing Linux servers on the Amazon platform, ensuring seamless operations and optimal functionality.",
-      "Skilled in designing scalable and resilient cloud architectures, maximizing resource utilization and cost-efficiency to meet business needs.",
-      "Proficient in configuring and deploying WAFs like Cloudflare and Sucuri, ensuring enhanced security measures for web applications.",
+      "Architected, deployed, and managed AWS cloud solutions across EC2, ECS, ELB, EBS, S3, VPC, IAM, Linux, RDS, CloudWatch, CloudFormation, Elastic Beanstalk, and Auto Scaling.",
+      "Set up and managed Linux servers on AWS, ensuring reliable operations and optimal functionality.",
+      "Designed scalable and resilient cloud architectures with a focus on resource utilisation and cost efficiency.",
+      "Configured and deployed Web Application Firewalls (WAFs), including Cloudflare and Sucuri, to strengthen web application security.",
     ],
   },
   {
-    company: "Evolutionary Algorithms Private Limited",
-    location: "Bhubaneswar",
+    company: "EVOLUTIONARY ALGORITHMS PRIVATE LIMITED",
     role: "Technical Engineer",
-    duration: "03/2020 - 04/2021",
-    details: [
-      "Played a pivotal role in establishing the entire cloud-based distributed computing infrastructure for the application, contributing to its seamless operation and scalability.",
-      "Demonstrated expertise in deploying applications on Web and App Servers, including Apache Tomcat and WebLogic application server, ensuring smooth and efficient functioning of web applications.",
-      "Possesses a strong working knowledge of Linux/Unix, adept at shell scripting, and proficient in adapting and manipulating scripts to meet specific requirements.",
-    ],
-  },
-  {
-    company: "Navedas Technology Solutions Private Limited",
+    duration: "03/2020 – 04/2021",
     location: "Bhubaneswar",
-    role: "Data Research Analyst",
-    duration: "02/2018 - 03/2020",
     details: [
-      "Conducted extensive research to build a comprehensive database within the assigned geography, leveraging sources such as Google, LinkedIn, SalesNavigator, Hoovers, Bloomberg, and other social media platforms.",
-      "Conducted full life cycle analysis encompassing identification and analysis of business requirements for a retail business.",
-      "Fetched validated information of retailers, ensuring accurate and reliable data for informed decision-making.",
+      "Established and supported cloud-based distributed computing infrastructure for applications, contributing to operational reliability and scalability.",
+      "Deployed applications on Apache Tomcat and WebLogic and supported Linux/Unix environments and shell scripting.",
+    ],
+  },
+  {
+    company: "NAVEDAS TECHNOLOGY SOLUTIONS PRIVATE LIMITED",
+    role: "Data Research Analyst",
+    duration: "02/2018 – 03/2020",
+    location: "Bhubaneswar",
+    details: [
+      "Conducted market and business research, analysed retail business requirements, and validated retailer information using multiple research and professional data sources.",
     ],
   },
 ];
 
-export const projects = [
-  {
-    title: "Projects",
-    tags: [],
-    description: "Details available on request",
-  },
+export const certifications = [
+  "GitHub Copilot | GH-300 | 2026",
+  "Claude Certified Architect Foundation | 2026",
 ];
 
-export const certification = {
-  name: "AWS Certified Solutions Architect",
-  issuer: "Amazon Web Service",
-  credential: "SAA-C03",
-  year: "2022",
-};
+export const socialLinks = [
+  { label: "Website", href: profile.website },
+  { label: "Email", href: `mailto:${profile.email}` },
+  { label: "LinkedIn", href: "http://linkedin.com/in/biju-behera-196509a4" },
+];

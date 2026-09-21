@@ -1,105 +1,53 @@
-# Biju Behera — AWS DevOps Portfolio
+# Biju Behera — AWS DevOps Engineer Portfolio
 
-A responsive single-page portfolio built with **React + Vite + Tailwind CSS + Framer Motion**.
+A responsive React portfolio using React, Tailwind CSS, Framer Motion, Vite, and Lucide React.
 
-## Source-grounding notes
+## Source-data notes
 
-- Experience details are taken from the supplied resume.
-- The requested latest entry **Infosys — Full Stack Developer — Feb 2025 - Present** is included exactly as requested.
-- The supplied resume does not contain named project entries, so the Projects section intentionally uses **“Details available on request”** rather than inventing project names or project details.
-- The Tech Stack uses the technologies listed in the supplied resume.
-- WhatsApp uses the phone number from the supplied resume: `+91 7751009113`.
-- The GitHub footer icon is a generic navigation placeholder because no GitHub URL is present in the supplied resume. Replace it if you have your GitHub profile URL.
+The supplied resume is the source of truth for the Technical Skills and Experience sections.
 
-## Assets
+The Tech Stack section now uses the technologies listed under Technical Skills in the resume:
+AWS, Linux, Ubuntu, CentOS, Terraform, AWS CloudFormation, Shell Scripting, CloudWatch, Prometheus, Grafana, Jenkins, Ansible, Apache, Nginx, Git, AWS CodeCommit, Cloudflare, Sucuri WAF, ChatGPT, Claude, GitHub Copilot, and Docker.
 
-Put these two files in `public/`:
+The portfolio headline is **AWS DevOps Engineer**.
 
-```text
-public/
-├── profile.jpg   # the uploaded profile photograph
-└── resume.pdf    # supplied resume
-```
+The Projects section has been removed.
 
-The code already references `/profile.jpg` and `/resume.pdf`.
+The LinkedIn link is taken from the hyperlink embedded in the supplied resume:
+`http://linkedin.com/in/biju-behera-196509a4`
 
-## Run locally
+The Hero portrait is displayed as a rectangular image with a gradient border/glow.
+
+## Local development
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open the local Vite URL shown in the terminal, normally:
-
-```text
-http://localhost:5173
-```
-
 ## Production build
 
 ```bash
-npm run build
+npm install && npm run build
+npm run preview
 ```
 
-The optimized static site is generated in `dist/`.
-
-## Deploy to Vercel
-
-1. Push this project to GitHub.
-2. Import the repository into Vercel.
-3. Vercel detects the Vite project automatically.
-4. Build command:
+## Vercel
 
 ```bash
-npm run build
+npx vercel
 ```
 
-5. Output directory:
+Or import the repository into Vercel with framework preset **Vite**, build command `npm run build`, and output directory `dist`.
 
-```text
-dist
-```
+## Contact form
 
-No server-side runtime is required.
+The UI is complete, but the form is not connected to an email/API provider. Connect it to your preferred backend or form service before production use.
 
-## Deploy on Ubuntu with Nginx
+## WhatsApp
 
-Build the project:
+The button uses the phone number present in the resume:
+`+91 7751009113`
 
-```bash
-npm install
-npm run build
-```
-
-Copy `dist/` to your web root, for example:
-
-```bash
-sudo mkdir -p /var/www/biju-portfolio
-sudo cp -r dist/* /var/www/biju-portfolio/
-```
-
-Example Nginx server block:
-
-```nginx
-server {
-    listen 80;
-    server_name your-domain.com www.your-domain.com;
-
-    root /var/www/biju-portfolio;
-    index index.html;
-
-    location / {
-        try_files $uri $uri/ /index.html;
-    }
-}
-```
-
-Then:
-
-```bash
-sudo nginx -t
-sudo systemctl reload nginx
-```
-
-For HTTPS, use Certbot/Let's Encrypt on the Ubuntu server.
+It opens:
+`https://wa.me/917751009113`

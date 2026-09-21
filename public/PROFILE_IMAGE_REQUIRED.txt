@@ -1,1 +1,0 @@
-Copy the uploaded profile photograph to this directory as public/profile.jpg. The Hero component references /profile.jpg.

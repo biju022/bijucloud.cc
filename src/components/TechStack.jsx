@@ -1,40 +1,28 @@
-import {
-  Activity, Cloud, Code2, Container, FileCode2, GitBranch, Globe2, HardDrive,
-  MonitorCog, Network, Server, Shield, TerminalSquare
-} from "lucide-react";
-import Reveal from "./Reveal";
+import { motion } from "framer-motion";
+import Section from "./Section";
 import { techStack } from "../data/portfolio";
-
-const icons = [
-  Cloud, Network, Shield, TerminalSquare, FileCode2, GitBranch, Container,
-  TerminalSquare, Server, Globe2, Activity,
-];
 
 export default function TechStack() {
   return (
-    <section id="tech-stack">
-      <div className="section-shell">
-        <Reveal>
-          <div className="mb-10">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-indigo-300">Capabilities</p>
-            <h2 className="section-title"><span className="gradient-text">Tech</span> Stack</h2>
-          </div>
-        </Reveal>
-
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          {techStack.map((tech, index) => {
-            const Icon = icons[index % icons.length];
-            return (
-              <Reveal key={tech} delay={index * 0.025}>
-                <div className="glass group h-full rounded-2xl p-5 transition hover:-translate-y-1 hover:border-indigo-300/25 hover:bg-white/[0.07]">
-                  <Icon size={26} className="text-indigo-300 transition group-hover:text-cyan-300" />
-                  <p className="mt-4 text-sm font-semibold leading-5 text-slate-200">{tech}</p>
-                </div>
-              </Reveal>
-            );
-          })}
-        </div>
+    <Section id="stack" eyebrow="Tech Stack" title="Tools I work with.">
+      <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        {techStack.map((tech, index) => (
+          <motion.div
+            key={tech.name}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ delay: index * 0.045 }}
+            whileHover={{ y: -4 }}
+            className="glass group rounded-2xl p-5 text-center transition"
+          >
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 font-display text-sm font-bold text-sky-300 transition group-hover:border-sky-300/30 group-hover:bg-sky-300/10">
+              {tech.icon}
+            </div>
+            <p className="mt-4 text-sm font-semibold text-slate-200">{tech.name}</p>
+          </motion.div>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }

@@ -1,57 +1,60 @@
+import { motion } from "framer-motion";
 import { BriefcaseBusiness, MapPin } from "lucide-react";
-import Reveal from "./Reveal";
+import Section from "./Section";
 import { experience } from "../data/portfolio";
 
 export default function Experience() {
   return (
-    <section id="experience">
-      <div className="section-shell">
-        <Reveal>
-          <div className="mb-10">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-indigo-300">Career</p>
-            <h2 className="section-title">Trajectory / <span className="gradient-text">Experience</span></h2>
-          </div>
-        </Reveal>
+    <Section id="experience" eyebrow="Trajectory" title="Experience across cloud, infrastructure, and operations.">
+      <div className="relative mt-12">
+        <div className="timeline-line absolute bottom-0 left-[13px] top-0 w-px md:left-1/2 md:-translate-x-1/2" />
 
-        <div className="relative ml-2 border-l border-indigo-400/20 pl-7 sm:ml-5 sm:pl-10">
+        <div className="space-y-10">
           {experience.map((item, index) => (
-            <Reveal key={`${item.company}-${item.duration}`} delay={index * 0.06}>
-              <article className="relative mb-8 last:mb-0">
-                <span className="absolute -left-[39px] top-2 h-4 w-4 rounded-full border-4 border-[#070a14] bg-gradient-to-br from-indigo-400 to-cyan-300 shadow-[0_0_18px_rgba(99,102,241,.6)] sm:-left-[49px]" />
-                <div className={`glass rounded-3xl p-6 sm:p-7 ${item.current ? "border-indigo-400/25 shadow-glow" : ""}`}>
-                  <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+            <motion.article
+              key={`${item.company}-${item.duration}`}
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.12 }}
+              transition={{ duration: 0.5 }}
+              className="relative md:grid md:grid-cols-2 md:gap-12"
+            >
+              <div className={`${index % 2 ? "md:col-start-2" : "md:col-start-1"} pl-10 md:pl-0`}>
+                <div className="glass rounded-3xl p-6 sm:p-7">
+                  <div className="flex flex-wrap items-start justify-between gap-3">
                     <div>
-                      <p className="text-sm font-semibold text-indigo-300">{item.duration}</p>
-                      <h3 className="mt-2 text-xl font-bold text-white">{item.company}</h3>
-                      <p className="mt-1 flex items-center gap-2 text-sm text-slate-400">
-                        <BriefcaseBusiness size={15} /> {item.role}
+                      <p className="text-xs font-bold uppercase tracking-[0.18em] text-sky-300">
+                        {item.duration}
                       </p>
-                      {item.location && (
-                        <p className="mt-1 flex items-center gap-2 text-xs text-slate-500">
-                          <MapPin size={14} /> {item.location}
-                        </p>
-                      )}
+                      <h3 className="mt-2 font-display text-xl font-bold text-white">{item.role}</h3>
+                      <p className="mt-1 font-semibold text-slate-300">{item.company}</p>
                     </div>
-                    {item.current && (
-                      <span className="w-fit rounded-full border border-emerald-300/20 bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-300">
-                        Current
-                      </span>
-                    )}
+                    <div className="rounded-xl border border-white/10 bg-white/5 p-2 text-sky-300">
+                      <BriefcaseBusiness size={18} />
+                    </div>
                   </div>
 
-                  {Array.isArray(item.details) ? (
-                    <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-400">
-                      {item.details.map((detail) => <li key={detail} className="list-disc pl-1 marker:text-indigo-400">{detail}</li>)}
-                    </ul>
-                  ) : (
-                    <p className="mt-5 text-sm text-slate-500">{item.details}</p>
-                  )}
+                  <div className="mt-5 flex items-center gap-2 text-xs text-slate-500">
+                    <MapPin size={14} />
+                    {item.location}
+                  </div>
+
+                  <ul className="mt-5 space-y-3 text-sm leading-6 text-slate-400">
+                    {item.details.map((detail) => (
+                      <li key={detail} className="flex gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400" />
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </article>
-            </Reveal>
+              </div>
+
+              <div className="absolute left-[7px] top-8 z-10 h-3 w-3 rounded-full border-2 border-slate-950 bg-sky-400 shadow-[0_0_0_5px_rgba(56,189,248,0.10)] md:left-1/2 md:-translate-x-1/2" />
+            </motion.article>
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
