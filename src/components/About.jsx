@@ -46,7 +46,6 @@ export default function About() {
               <p className="mt-1 text-sm font-semibold text-white">Docker</p>
             </div>
           </div>
-
         </motion.div>
 
         <div className="grid grid-cols-2 gap-4">
