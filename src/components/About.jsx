@@ -24,9 +24,29 @@ export default function About() {
             {profile.summary}
           </p>
           <div className="mt-7 h-px bg-white/10" />
-          <p className="mt-6 text-sm leading-7 text-slate-400">
-            The portfolio framing uses the requested AWS DevOps Engineer title while preserving the supplied resume&apos;s documented AWS/DevOps experience.
-          </p>
+
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="rounded-xl border border-white/10 bg-white/5 p-3">
+              <p className="text-xs text-slate-500">Cloud</p>
+              <p className="mt-1 text-sm font-semibold text-white">AWS</p>
+            </div>
+
+            <div className="rounded-xl border border-white/10 bg-white/5 p-3">
+              <p className="text-xs text-slate-500">IaC</p>
+              <p className="mt-1 text-sm font-semibold text-white">Terraform</p>
+            </div>
+
+            <div className="rounded-xl border border-white/10 bg-white/5 p-3">
+              <p className="text-xs text-slate-500">CI/CD</p>
+              <p className="mt-1 text-sm font-semibold text-white">Jenkins</p>
+            </div>
+
+            <div className="rounded-xl border border-white/10 bg-white/5 p-3">
+              <p className="text-xs text-slate-500">Containers</p>
+              <p className="mt-1 text-sm font-semibold text-white">Docker</p>
+            </div>
+          </div>
+
         </motion.div>
 
         <div className="grid grid-cols-2 gap-4">
